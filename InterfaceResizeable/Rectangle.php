@@ -5,6 +5,7 @@ include_once "Resizeable.php";
 
 class Rectangle implements \Resizeable
 {
+    public $name;
     public $width;
     public $height;
 
@@ -12,10 +13,27 @@ class Rectangle implements \Resizeable
      * @param $width
      * @param $height
      */
-    public function __construct($width, $height)
+    public function __construct($name, $width, $height)
     {
+        $this->name = $name;
         $this->width = $width;
         $this->height = $height;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param mixed $name
+     */
+    public function setName($name): void
+    {
+        $this->name = $name;
     }
 
     /**
@@ -50,6 +68,10 @@ class Rectangle implements \Resizeable
         $this->height = $height;
     }
 
+    public function getArea()
+    {
+        return $this->width*$this->height;
+    }
     public function resize($percent)
     {
         $this->width = $this->width + $this->width * $percent / 100;

@@ -1,8 +1,8 @@
 <?php
 include_once "Circle.php";
 include_once "Rectangle.php";
-$geometry[] = new \InterfaceResizeable\Circle(30);
-$geometry[]= new \InterfaceResizeable\Rectangle(30,20);
+$geometry[] = new \InterfaceResizeable\Circle("circle",30);
+$geometry[]= new \InterfaceResizeable\Rectangle("rect",30,20);
 echo "<pre>";
 echo " Kích thước ban đầu : ";
 foreach ($geometry as $item) {
